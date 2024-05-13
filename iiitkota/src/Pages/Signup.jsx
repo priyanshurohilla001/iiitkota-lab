@@ -67,7 +67,7 @@ function Signup1() {
     console.log(data);
 
     await axios.post(
-      "http://localhost:3000/api/v1/emailverification/generate",
+      import.meta.env.VITE_SERVER + "/api/v1/emailverification/generate",
       {
         email: data.email,
       },

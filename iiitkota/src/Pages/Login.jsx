@@ -33,7 +33,7 @@ export const Login = () => {
       }
 
       const loginVerify = await axios.post(
-        "http://localhost:3000/api/v1/user/login",
+        import.meta.env.VITE_SERVER + "/api/v1/user/login",
         data,
       );
 

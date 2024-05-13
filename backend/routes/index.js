@@ -6,6 +6,5 @@ const router = express.Router();
 
 router.use("/emailverification", emailVerificationRouter);
 router.use("/user", userRouter);
-router.use("/", (req, res) => res.send("Hello from iiitk"));
 
 export default router;

@@ -4,7 +4,7 @@ import authmiddleware from "./authmiddleware.js";
 import User from "../db/usersdb.js";
 
 const router = express.Router();
-// router.use(authmiddleware);
+router.use(authmiddleware);
 
 router.post("/", async (req, res) => {
   try {

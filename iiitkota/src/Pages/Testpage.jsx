@@ -6,6 +6,8 @@ export const Testpage = () => {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const inputrefs = useRef([]);
 
+  console.log(import.meta.env.VITE_SERVER + "/api/v1/user/timetable");
+
   const handleOtpChange = (value, index) => {
     const values = [...otp];
     values[index] = value;
@@ -26,7 +28,6 @@ export const Testpage = () => {
 
   useEffect(() => {
     const otpString = parseInt(otp.join(""));
-    console.log(otpString);
 
     if (otpString > 999) {
       if (otpString == otpServer) {

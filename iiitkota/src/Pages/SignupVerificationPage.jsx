@@ -60,7 +60,7 @@ export default function SignupVerificationPage() {
 
   function verifyOTP() {
     axios
-      .post("http://localhost:3000/api/v1/emailverification/verify", {
+      .post(import.meta.env.VITE_SERVER + "/api/v1/emailverification/verify", {
         email: data.email,
         otp: otpsubmit,
       })
@@ -96,7 +96,7 @@ export default function SignupVerificationPage() {
     );
 
     const res = await axios
-      .post("http://localhost:3000/api/v1/user/signup", {
+      .post(import.meta.env.VITE_SERVER + "/api/v1/user/signup", {
         name: data.name,
         email: data.email,
         password: data.password,
@@ -185,9 +185,12 @@ function Resend() {
   const data = useRecoilValue(signupDataAtom);
 
   const resendEmail = () => {
-    axios.post("http://localhost:3000/api/v1/emailverification/generate", {
-      email: data.email,
-    });
+    axios.post(
+      import.meta.env.VITE_SERVER + "/api/v1/emailverification/generate",
+      {
+        email: data.email,
+      },
+    );
 
     setResendAllowed(false);
 

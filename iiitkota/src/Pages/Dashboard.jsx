@@ -23,7 +23,7 @@ export const Dashboard = () => {
       const day = new Date().getDay();
 
       const datareq = await axios.post(
-        "http://localhost:3000/api/v1/user/timetable",
+        import.meta.env.VITE_SERVER + "/api/v1/user/timetable",
         {
           email,
           day,
@@ -34,6 +34,8 @@ export const Dashboard = () => {
         console.log("No data found");
         return;
       }
+
+      console.log(datareq);
 
       setdata(datareq.data);
     }
