@@ -1,0 +1,11 @@
+/* CSS to remove arrow buttons  */
+.no-spinners {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.no-spinners::-webkit-inner-spin-button,
+.no-spinners::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

@@ -1,0 +1,25 @@
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+
+.embla__container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%; /* Each slide covers 80% of the viewport */
+}
+
+.embla__slide {
+  flex: 0 0 100%; /* Default slide covers 100% of the viewport */
+  min-width: 0;
+}
+.embla__slide {
+  flex: 0 0 100%; /* Default slide covers 100% of the viewport */
+}
+@media (min-width: 768px) {
+  .embla__slide {
+    flex: 0 0 50%; /* Breakpoint SM slide covers 50% of the viewport */
+  }
+}
