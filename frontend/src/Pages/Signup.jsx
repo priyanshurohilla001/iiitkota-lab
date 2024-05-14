@@ -51,7 +51,7 @@ function Signup1() {
     submitref.current.classList.add("animate-pulse");
 
     const userexist = await axios.get(
-      `http://localhost:3000/api/v1/user/exist?email=${data.email}`,
+      import.meta.env.VITE_SERVER + `/api/v1/user/exist?email=${data.email}`,
     );
 
     if (userexist.data) {

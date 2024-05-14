@@ -22,7 +22,7 @@ export const Login = () => {
   async function OnSubmit(data) {
     try {
       const userExistResponse = await axios.get(
-        `http://localhost:3000/api/v1/user/exist?email=${data.email}`,
+        import.meta.env.VITE_SERVER + `/api/v1/user/exist?email=${data.email}`,
       );
 
       const userExist = userExistResponse.data;
