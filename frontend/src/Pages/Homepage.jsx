@@ -161,7 +161,7 @@ const PlacementStats = () => {
   return (
     <div
       id="placement"
-      className=" max-w-screen-xl px-4 py-8 md:px-8 md:py-16  "
+      className=" max-w-screen-xl mx-auto px-4 py-8 md:px-8 md:py-16  "
     >
       <div className="mb-8 md:mb-16 flex justify-between gap-4 ">
         <h1 className="  text-4xl md:text-6xl  font-semibold">Placement</h1>
