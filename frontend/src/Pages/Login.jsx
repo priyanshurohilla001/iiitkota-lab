@@ -46,6 +46,7 @@ export const Login = () => {
       localStorage.setItem("email", data.email);
 
       navigate("/dashboard");
+      window.location.reload();
     } catch (error) {
       setError("credentials", {
         type: "manual",
@@ -54,11 +55,6 @@ export const Login = () => {
       return;
     }
   }
-
-  const handleEmailChange = () => {
-    clearErrors("credentials");
-    setUserexist(true);
-  };
 
   return (
     <div className=" h-screen flex items-center justify-center bg-gray-100">
@@ -76,7 +72,6 @@ export const Login = () => {
               {...register("email", { required: "Email is required" })}
               placeholder="Enter Your email"
               className="border-2 border-gray-100 rounded-sm px-2 py-2"
-              onChange={handleEmailChange}
             />
             {errors.email && (
               <div className="text-right text-sm text-red-700">
@@ -89,7 +84,6 @@ export const Login = () => {
               {...register("password", { required: "Password is required" })}
               placeholder="Enter Your password"
               className="border-2 border-gray-100 rounded-sm px-2 py-2"
-              onChange={handleEmailChange}
             />
             {errors.password && (
               <div className="text-right text-sm text-red-700">
