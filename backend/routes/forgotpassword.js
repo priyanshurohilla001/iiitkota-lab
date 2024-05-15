@@ -2,6 +2,7 @@ import express from "express";
 import User from "../db/usersdb.js";
 import jwt from "jsonwebtoken";
 import Mailgun from "mailgun-js";
+import { parseJwt } from "../functions/parseJWT.js";
 
 const router = express.Router();
 
@@ -22,17 +23,33 @@ router.post("/", async (req, res) => {
     process.env.jwtkey + user.password,
     {
       expiresIn: "5min",
-    },
+    }
   );
+
+  const url = process.env.frontendUrl + `/reset-password/${forogotPassToken}`;
+
+  const api_key = process.env.mailgunApiKey;
+  const domain = "mail.priyanshu.live";
+  const from_who = "priyanshu@mail.priyanshu.live";
+
+  const mailgun = new Mailgun({ apiKey: api_key, domain: domain });
 
   const data = {
     from: "priyanshu@mail.priyanshu.live",
     to: `${email}`,
     subject: "Password Reset Email",
-    text: `Click on the link to reset your password: ${process.env.clienturl}/reset-password/${forogotPassToken}`,
+    text: `Click on the link to reset your password: ${url}`,
   };
 
-  res.status(200).send(token);
+  mailgun.messages().send(data, (err, body) => {
+    if (err) {
+      console.log("got an error: ", err);
+      return res.json({ error: err });
+    } else {
+      return res.send("Email sent successfully");
+    }
+  });
+
 });
 
 export default router;

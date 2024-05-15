@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 export const ForgotPassword = () => {
   const {
@@ -7,8 +8,21 @@ export const ForgotPassword = () => {
     handleSubmit,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+
+    try {
+      const req = await axios.post(
+        import.meta.env.VITE_SERVER + "/api/v1/user/forgot-password",
+        {
+          email: data.email,
+        }
+      );
+
+      alert(req.data);
+    } catch (error) {
+      console.log(error);
+    }
+  
   };
 
   return (

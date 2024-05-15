@@ -9,6 +9,7 @@ import { Login } from "./Pages/Login";
 import { Testpage } from "./Pages/Testpage";
 import { Header } from "./components/Header";
 import { ForgotPassword } from "./Pages/ForgotPassword";
+import { UpdatePassword } from "./Pages/UpdatePassword";
 
 export default function App() {
   axios.defaults.headers.common["Authorization"] =
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="/test" element={<Testpage />} />
           <Route path="*" element={<h1>Not Found</h1>} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password/:token" element={<UpdatePassword/>}/>
         </Routes>
       </Router>
     </RecoilRoot>
