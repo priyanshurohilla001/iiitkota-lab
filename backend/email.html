@@ -1,43 +1,50 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Email Verification</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
+        background-color: #26297d;
+        margin: 50px;
+        font-family: "Poppins", sans-serif;
+      }
+      #otpContainer {
+        background-color: #e9ecef;
         padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
       }
-      .container {
-        max-width: 600px;
-        margin: 0 auto;
-        background-color: #ffffff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      .header {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      .content {
-        margin-bottom: 20px;
-      }
-      .footer {
-        text-align: center;
+      #logo {
+        width: 300px;
+        height: auto;
       }
     </style>
   </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <h1>Email Verification OTP</h1>
-      </div>
-      <div class="content">
-        <p>Dear Student,</p>
-        <p>Your OTP for email verification is: ${otp}</p>
-      </div>
-      <div class="footer">
-        <p>This email is from IIIT Kota | Institute of National Importance</p>
-      </div>
+
+  <body id="emailContainer">
+    <img id="logo" src="https://iiitkota-lab.vercel.app/logo.svg" />
+    <div id="otpContainer">
+      <h1>Email Verification</h1>
+      <p>Dear IIIT Kota User,</p>
+      <p>
+        Thank you for registering with us. To complete your registration, please
+        enter the following OTP in the verification field on our website. Please
+        note that this OTP will expire in 10 minutes.
+      </p>
+      <p>Your OTP: <strong>${otp}</strong></p>
+      <p>If you did not request this verification, please ignore this email.</p>
+      <p>
+        Best Regards, <br />
+        IIIT Kota Team
+      </p>
     </div>
   </body>
 </html>

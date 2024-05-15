@@ -43,7 +43,7 @@ router.post("/", async (req, res) => {
 
     return res.status(200).json(TueB);
   } catch (error) {
-    res.status(500).send("Server erro");
+    res.status(500).send("Server error");
   }
 });
 
