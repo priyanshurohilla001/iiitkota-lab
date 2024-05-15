@@ -4,6 +4,7 @@ import userexistRouter from "./userexist.js";
 import loginRouter from "./login.js";
 import dataRouter from "./data.js";
 import timetableRouter from "./timetable.js";
+import forgotpasswordRouter from "./forgotpassword.js";
 
 const router = express.Router();
 
@@ -12,5 +13,6 @@ router.use("/exist", userexistRouter);
 router.use("/login", loginRouter);
 router.use("/data", dataRouter);
 router.use("/timetable", timetableRouter);
+router.use("/forgot-password", forgotpasswordRouter);
 
 export default router;

@@ -92,7 +92,7 @@ export const Login = () => {
             )}
             <a
               className="flex justify-end items-center text-primary "
-              href="/forgotpassword"
+              href="/forgot-password"
             >
               forgot password?
             </a>

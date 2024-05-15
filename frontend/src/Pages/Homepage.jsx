@@ -16,26 +16,28 @@ export const Homepage = () => {
 
 const HeaderTextComponent = () => {
   return (
-    <div className=" max-w-screen-xl mx-auto px-4 py-8 md:px-8 md:py-16">
-      <h1 className=" text-3xl md:text-6xl font-bold mb-4 md:mb-10">
-        <span className="  text-primary">Welcome</span> to Indian Institute of
-        Information Technology Kota
-      </h1>
+    <>
+      <div className=" max-w-screen-xl mx-auto px-4 py-8 md:px-8 md:py-16">
+        <h1 className=" text-3xl md:text-6xl font-bold mb-4 md:mb-10">
+          <span className="  text-primary">Welcome</span> to Indian Institute of
+          Information Technology Kota
+        </h1>
 
-      <p className="text-base md:text-xl text-gray-500 font-light mb-4 md:mb-8 leading-7 md:leading-8">
-        Indian Institute of Information Technology, Kota (IIIT, Kota) is an
-        institute of national importance. IIIT Kota is a joint venture of the
-        Ministry of Education (MoE) Govt. of India and Govt. of Rajasthan with
-        Industry Partners in Public-Private-Partnership (PPP) model. IIIT Kota
-        was established in 2013. Currently, the institute is mentored by
-        Malaviya National Institute of Technology Jaipur (MNIT Jaipur) and is
-        situated at MNIT Jaipur. The permanent campus of IIIT, Kota is being
-        constructed at Ranpur near Kota on 100.37 acres of land made available
-        by the Govt. of Rajasthan. The construction of Phase-1 and Phase 2 of
-        the campus is going on in full swing
-      </p>
-      <BigButton url="https://iiitkota.ac.in/about-institute" />
-    </div>
+        <p className="text-base md:text-xl text-gray-500 font-light mb-4 md:mb-8 leading-7 md:leading-8">
+          Indian Institute of Information Technology, Kota (IIIT, Kota) is an
+          institute of national importance. IIIT Kota is a joint venture of the
+          Ministry of Education (MoE) Govt. of India and Govt. of Rajasthan with
+          Industry Partners in Public-Private-Partnership (PPP) model. IIIT Kota
+          was established in 2013. Currently, the institute is mentored by
+          Malaviya National Institute of Technology Jaipur (MNIT Jaipur) and is
+          situated at MNIT Jaipur. The permanent campus of IIIT, Kota is being
+          constructed at Ranpur near Kota on 100.37 acres of land made available
+          by the Govt. of Rajasthan. The construction of Phase-1 and Phase 2 of
+          the campus is going on in full swing
+        </p>
+        <BigButton url="https://iiitkota.ac.in/about-institute" />
+      </div>
+    </>
   );
 };
 
